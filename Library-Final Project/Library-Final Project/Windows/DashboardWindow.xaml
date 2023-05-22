@@ -1,0 +1,26 @@
+﻿<Window x:Class="Library_Final_Project.Windows.DashboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library_Final_Project.Windows"
+        mc:Ignorable="d"
+        Title="Esas lövhə" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FFF9F9F9" Offset="0"/>
+                <GradientStop Color="#FF7CC2A2" Offset="0.281"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="BtnUsers" Content="İdarəçilər" HorizontalAlignment="Left" Margin="86,54,0,0" VerticalAlignment="Top" Width="173" Height="40" Background="#FF2D963A" BorderBrush="#FF095A06" Click="BtnUsers_Click"/>
+        <Button x:Name="BtnBooks" Content="Kitablar" HorizontalAlignment="Left" Margin="86,143,0,0" VerticalAlignment="Top" Width="173" Height="40" Background="#FF308E38" BorderBrush="#FF032602" Click="BtnBooks_Click"/>        
+        <Button x:Name="BtnClients" Content="Müştərilər" HorizontalAlignment="Left" Margin="86,217,0,0" VerticalAlignment="Top" Width="173" Height="40" Background="#FF3A9945" BorderBrush="#FF1E791C" Click="BtnClients_Click"/>
+        <Button x:Name="BtnReports" Content="Hesabatlar" HorizontalAlignment="Left" Margin="86,291,0,0" VerticalAlignment="Top" Width="173" Height="40" Background="#FF5A9661" BorderBrush="#FF298827" Click="BtnReports_Click"/>
+        <Button x:Name="BtnCreateRental" Content="Sifariş yaratma" HorizontalAlignment="Left" Margin="482,55,0,0" VerticalAlignment="Top" Width="195" Height="50" Background="#FF3366BC" BorderBrush="#FF0B2F32" Click="BtnCreateRental_Click"/>
+        <Button x:Name="BtnReturnBook" Content="Kitab qaytarma" HorizontalAlignment="Left" Margin="482,169,0,0" VerticalAlignment="Top" Width="195" Height="50" RenderTransformOrigin="0.493,0.579" Background="#FF3C7BAE" BorderBrush="#FF19585F" Click="BtnReturnBook_Click"/>
+        <Button x:Name="BtnFollowReturnTime" Content="Qaytarılmalı sifarişlər" HorizontalAlignment="Left" Margin="482,281,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.469,0.642" Width="195" Height="50" Background="#FF4483A9" BorderBrush="#FF23828B" Click="BtnFollowReturnTime_Click"/>
+
+    </Grid>
+</Window>

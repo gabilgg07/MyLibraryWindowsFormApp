@@ -1,0 +1,32 @@
+﻿<Window x:Class="Library_Final_Project.Windows.ClientsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library_Final_Project.Windows"
+        mc:Ignorable="d"
+        Title="Müştərilər" Height="494" Width="800">
+    <Grid>
+        <Grid Margin="0,0,605,0">
+            <Label x:Name="LblName" Content="Ad" HorizontalAlignment="Left" Margin="30,16,0,0" VerticalAlignment="Top" Width="145" FontWeight="Bold"/>
+            <TextBox x:Name="TxtName" HorizontalAlignment="Left" Margin="30,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+            <Label x:Name="LblSurname" Content="Soyad" HorizontalAlignment="Left" Margin="30,95,0,0" VerticalAlignment="Top" Width="145" FontWeight="Bold"/>
+            <TextBox x:Name="TxtSurname" HorizontalAlignment="Left" Margin="30,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+            <Label x:Name="LblPhone" Content="Telefon" HorizontalAlignment="Left" Margin="24,188,0,0" VerticalAlignment="Top" Width="144" FontWeight="Bold"/>
+            <TextBox x:Name="TxtPhone" HorizontalAlignment="Left" Margin="24,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+            <Button x:Name="BtnCreate" Content="Əlavə et" HorizontalAlignment="Center" Margin="0,348,0,0" VerticalAlignment="Top" Width="148" Click="BtnCreate_Click"/>
+            <Button x:Name="BtnUpdate" Content="Yenile" HorizontalAlignment="Center" Margin="0,316,0,0" VerticalAlignment="Top" Width="148" Click="BtnUpdate_Click"  Visibility="Hidden"  Background="#FF0F9C67" BorderBrush="#FF084448"/>
+            <Button x:Name="BtnDelete" Content="Sil" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Width="148" Click="BtnDelete_Click"  Visibility="Hidden" Background="#FFD93535" BorderBrush="#FF80100B"/>
+        </Grid>
+        <Grid Margin="216,0,0,0">
+            <DataGrid x:Name="DgvClients" IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" Margin="10,10,10,10" SelectionChanged="DgvClients_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="0.10*" Header="Id" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Width="0.30*" Header="Ad" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Width="0.30*" Header="Soyad" Binding="{Binding Surname}"/>
+                    <DataGridTextColumn Width="0.30*" Header="Telefon" Binding="{Binding PhoneNumber}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>

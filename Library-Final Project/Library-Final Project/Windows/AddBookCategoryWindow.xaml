@@ -1,0 +1,14 @@
+﻿<Window x:Class="Library_Final_Project.Windows.AddBookCategoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library_Final_Project.Windows"
+        mc:Ignorable="d"
+        Title="Kitab Kateqoriyası Əlavə etmə" Height="284" Width="277">
+    <Grid>
+        <Label x:Name="LblName" Content="Kateqoriya adı:" HorizontalAlignment="Left" Margin="53,34,0,0" VerticalAlignment="Top" Width="165" FontSize="18" FontWeight="Bold" Foreground="#DD0D6774"/>
+        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Margin="53,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" FontSize="14" FontStyle="Normal" CaretBrush="#FF1C4096" Foreground="#FF06114F"/>
+        <Button x:Name="BtnAddCategory" Content="Əlavə et" HorizontalAlignment="Left" Margin="53,151,0,0" VerticalAlignment="Top" Width="165" Background="#FF129199" BorderBrush="#FF12379D" Click="BtnAddCategory_Click"/>
+    </Grid>
+</Window>

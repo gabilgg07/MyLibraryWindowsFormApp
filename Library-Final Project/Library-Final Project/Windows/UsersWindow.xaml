@@ -1,0 +1,36 @@
+﻿<Window x:Class="Library_Final_Project.Windows.UsersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library_Final_Project.Windows"
+        mc:Ignorable="d"
+        Title="İdareçi Lövhəsi" Height="480" Width="694">
+    <Grid>
+        <Grid Margin="0,0,494,0">
+            <Label x:Name="LblName" Content="Ad" HorizontalAlignment="Left" Margin="30,16,0,0" VerticalAlignment="Top" Width="145" FontWeight="Bold"/>
+            <TextBox x:Name="TxtName" HorizontalAlignment="Left" Margin="30,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+            <Label x:Name="LblSurname" Content="Soyad" HorizontalAlignment="Left" Margin="30,95,0,0" VerticalAlignment="Top" Width="145" FontWeight="Bold"/>
+            <TextBox x:Name="TxtSurname" HorizontalAlignment="Left" Margin="30,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+            <Label x:Name="LblLogin" Content="İstifadəçi adı" HorizontalAlignment="Left" Margin="30,170,0,0" VerticalAlignment="Top" Width="145" FontWeight="Bold"/>
+            <TextBox x:Name="TxtLogin" HorizontalAlignment="Left" Margin="30,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+            <Label x:Name="LblPassword" Content="Şifrə" HorizontalAlignment="Left" Margin="30,245,0,0" VerticalAlignment="Top" Width="145" FontWeight="Bold"/>
+            <TextBox x:Name="TxtPassword" HorizontalAlignment="Left" Margin="30,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145"/>
+            <Button x:Name="BtnCreate" Content="Qeydiyyat" HorizontalAlignment="Center" Margin="0,348,0,0" VerticalAlignment="Top" Width="148" Click="BtnCreate_Click"/>
+            <Button x:Name="BtnUpdate" Content="Yenile" HorizontalAlignment="Center" Margin="0,316,0,0" VerticalAlignment="Top" Width="148" Click="BtnUpdate_Click" Visibility="Hidden"  Background="#FF0F9C67" BorderBrush="#FF084448"/>
+            <Button x:Name="BtnDelete" Content="Sil" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Width="148" Click="BtnDelete_Click" Visibility="Hidden" Background="#FFD93535" BorderBrush="#FF80100B"/>
+        </Grid>
+        <Grid Margin="200,0,0,0">
+            <DataGrid x:Name="DgvUsers" IsReadOnly="True" CanUserAddRows="False" AutoGenerateColumns="False" Margin="10,10,10,10" SelectionChanged="DgvUsers_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="0.10*" Header="Id" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Width="0.18*" Header="Ad" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Width="0.23*" Header="Soyad" Binding="{Binding Surname}"/>
+                    <DataGridTextColumn Width="0.30*" Header="İstifadəçi adı" Binding="{Binding Username}"/>
+                    <DataGridTextColumn Width="0.30*" Header="Şifrə" Binding="{Binding Password}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+    </Grid>
+</Window>
