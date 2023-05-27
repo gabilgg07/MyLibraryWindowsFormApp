@@ -14,7 +14,7 @@
             <GradientStop Color="#FF25C2A3" Offset="0.559"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Grid>
+    <Grid KeyDown="Grid_KeyDown">
         <Label x:Name="LblUserName" Content="İstifadeçi adınız : " HorizontalAlignment="Center" Margin="0,58,0,0" VerticalAlignment="Top" Width="194" FontWeight="Bold" FontSize="18" Foreground="#DDFFFFFF"/>
         <TextBox x:Name="TxtUserName" HorizontalAlignment="Center" Margin="0,106,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" FontSize="14" Foreground="White"/>
         <Label x:Name="LblPassword" Content="Şifrəniz : " HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" Width="194" FontWeight="Bold" FontSize="18" Foreground="#DDFFFFFF"/>        

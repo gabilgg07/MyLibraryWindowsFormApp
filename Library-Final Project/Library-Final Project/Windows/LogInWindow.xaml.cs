@@ -15,46 +15,18 @@ namespace Library_Final_Project.Windows
             InitializeComponent();
             _context = new LibraryContext();
         }
+
         
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
         {
-            if (FormValidation())
-            {
-                MessageBox.Show("Xanaları doldurun");
-                return;
-            }
+            ToLogin();
+        }
 
-            List<User> users = _context.Users.ToList();
-
-            int count = users.Count;
-            if (count == 0)
+        private void Grid_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
             {
-                MessageBox.Show("Kitabxana proqramına xoş gəlmisiniz");
-                DashboardWindow dw = new DashboardWindow();
-                dw.Show();
-                this.Close();
-                return;
-            }
-            foreach (User user in users)
-            {
-                
-                if (TxtUserName.Text == user.Username && PwbPassword.Password==user.Password)
-                {
-                    MessageBox.Show(user.Username+" adı ilə daxil oldunuz");
-                    DashboardWindow dw = new DashboardWindow();
-                    dw.Show();                    
-                    this.Close();
-                    return;
-                }
-                else
-                {
-                    count--;
-                    if (count==0)
-                    {
-                        MessageBox.Show("İstifadəçi adı və ya şifrəsi yanlışdır");
-                        return;
-                    }
-                }
+                ToLogin();
             }
         }
 
@@ -82,6 +54,48 @@ namespace Library_Final_Project.Windows
                 LblPassword.Foreground = new SolidColorBrush(Colors.Black);
             }
             return hasError;
+        }
+
+        private void ToLogin()
+        {
+            if (FormValidation())
+            {
+                MessageBox.Show("Xanaları doldurun");
+                return;
+            }
+
+            List<User> users = _context.Users.ToList();
+
+            int count = users.Count;
+            if (count == 0)
+            {
+                MessageBox.Show("Kitabxana proqramına xoş gəlmisiniz");
+                DashboardWindow dw = new DashboardWindow();
+                dw.Show();
+                this.Close();
+                return;
+            }
+            foreach (User user in users)
+            {
+
+                if (TxtUserName.Text == user.Username && PwbPassword.Password == user.Password)
+                {
+                    MessageBox.Show(user.Username + " adı ilə daxil oldunuz");
+                    DashboardWindow dw = new DashboardWindow();
+                    dw.Show();
+                    this.Close();
+                    return;
+                }
+                else
+                {
+                    count--;
+                    if (count == 0)
+                    {
+                        MessageBox.Show("İstifadəçi adı və ya şifrəsi yanlışdır");
+                        return;
+                    }
+                }
+            }
         }
     }
 }

@@ -5992,11 +5992,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Codes\\gitProjects\\Library-My-Final-Project\\Library-Final Project\\Library-Final Project\\Library-Final Project.csproj",
+      "projectUniqueName": "D:\\Codes\\gitProjects\\MyLibraryWindowsFormApp\\Library-Final Project\\Library-Final Project\\Library-Final Project.csproj",
       "projectName": "Library-Final Project",
-      "projectPath": "D:\\Codes\\gitProjects\\Library-My-Final-Project\\Library-Final Project\\Library-Final Project\\Library-Final Project.csproj",
+      "projectPath": "D:\\Codes\\gitProjects\\MyLibraryWindowsFormApp\\Library-Final Project\\Library-Final Project\\Library-Final Project.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Codes\\gitProjects\\Library-My-Final-Project\\Library-Final Project\\Library-Final Project\\obj\\",
+      "outputPath": "D:\\Codes\\gitProjects\\MyLibraryWindowsFormApp\\Library-Final Project\\Library-Final Project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

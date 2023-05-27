@@ -35,6 +35,7 @@ namespace Library_Final_Project.Windows
         {
             TxtName.Clear();
             CmbBookCategories.SelectedItem = null;
+            TxtPrice.Clear();
 
             BtnCreate.Visibility = Visibility.Visible;
             BtnUpdate.Visibility = Visibility.Hidden;
@@ -51,10 +52,13 @@ namespace Library_Final_Project.Windows
                 return;
             }
 
+            decimal.TryParse(TxtPrice.Text, out decimal price);
+
             Book book = new Book
             {
                 Name = TxtName.Text,
-                BookCategoryId = (int)CmbBookCategories.SelectedValue
+                BookCategoryId = (int)CmbBookCategories.SelectedValue,
+                Price = price
             };
 
             _context.Books.Add(book);
@@ -73,6 +77,7 @@ namespace Library_Final_Project.Windows
             _selectedBook = (Book)DgvBooks.SelectedItem;
 
             TxtName.Text = _selectedBook.Name;
+            TxtPrice.Text = _selectedBook.Price.ToString("0.00");
             CmbBookCategories.SelectedValue = _selectedBook.BookCategoryId;
 
             BtnCreate.Visibility = Visibility.Hidden;
@@ -88,7 +93,9 @@ namespace Library_Final_Project.Windows
                 return;
             }
 
+            decimal.TryParse(TxtPrice.Text, out decimal price);
             _selectedBook.Name = TxtName.Text;
+            _selectedBook.Price = price;
             _selectedBook.BookCategoryId = (int)CmbBookCategories.SelectedValue;
 
             _context.SaveChanges();
@@ -137,6 +144,16 @@ namespace Library_Final_Project.Windows
                 LblBookCategories.Foreground = new SolidColorBrush(Colors.Black);
             }
 
+            if (string.IsNullOrEmpty(TxtPrice.Text) || !decimal.TryParse(TxtPrice.Text, out _))
+            {
+                LblName.Foreground = new SolidColorBrush(Colors.Red);
+                hasError = true;
+            }
+            else
+            {
+                LblName.Foreground = new SolidColorBrush(Colors.Black);
+            }
+
             return hasError;
         }
 
@@ -150,6 +167,16 @@ namespace Library_Final_Project.Windows
         private void Abcw_RefreshCmbBookCategories()
         {
             FillBookCategories();
+        }
+
+        private void LblName_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            TxtName.Focus();
+        }
+
+        private void LblPricey_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            TxtPrice.Focus();
         }
     }
 }
